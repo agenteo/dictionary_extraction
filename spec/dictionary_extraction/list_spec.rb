@@ -17,6 +17,14 @@ module DictionaryExtraction
         it_behaves_like "no sequences"
       end
 
+      context "with sequences too short" do
+        let(:dictionary) { ['AAA', 'Zoo'] }
+
+        it "should never receive such input" do
+          # handled by Validator
+        end
+      end
+
       context "with no unique sequences" do
         let(:dictionary) { ['AAAS', 'AAAS'] }
         it_behaves_like "no sequences"

@@ -13,7 +13,7 @@ module DictionaryExtraction
     private
 
       def letters_only_dictionary
-        @dictionary.grep /^[a-zA-Z]+$/
+        @dictionary.grep /^[a-zA-Z]{#{SEQUENCE_LENGTH_MATCH},}/
       end
   end
 

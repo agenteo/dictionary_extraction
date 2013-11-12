@@ -1,7 +1,6 @@
 module DictionaryExtraction
 
   class List
-    SEQUENCE_LENGTH_MATCH = 4
     attr_reader :dictionary
 
     def initialize(dictionary)
