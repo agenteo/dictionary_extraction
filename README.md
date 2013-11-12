@@ -1,29 +1,10 @@
 # DictionaryExtraction
 
-TODO: Write a gem description
+Job interview sample code.
 
-## Installation
 
-Add this line to your application's Gemfile:
+Given a dictionary file, generate two output files named 'sequences' and 'words'.
 
-    gem 'dictionary_extraction'
+'sequences' should contain every sequence of four letters (alpha characters only, case sensitive) that appears exactly once in the dictionary file. There should be a line break after each sequence written to the file.
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install dictionary_extraction
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+'words' should contain the corresponding words which contain each unique sequence, in the same order, again one per line.
