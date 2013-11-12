@@ -13,13 +13,11 @@ module DictionaryExtraction
     
     describe "#unique_sequences" do
       context "with an empty dictionary" do
-      pending
         let(:dictionary) { [] }
         it_behaves_like "no sequences"
       end
 
       context "with no unique sequences" do
-      pending
         let(:dictionary) { ['AAAS', 'AAAS'] }
         it_behaves_like "no sequences"
       end
@@ -28,7 +26,7 @@ module DictionaryExtraction
         context "with word same lenght as sequence" do
           let(:unique_sequence_word) { 'AAAS' }
           let(:dictionary) { [unique_sequence_word] }
-      pending
+      
 
           it "should return a UniqueSequence object" do
             list = List.new(dictionary)
@@ -50,9 +48,9 @@ module DictionaryExtraction
 
         context "with one word longer then sequence" do
           let(:unique_sequence) { 'enri' }
-          let(:unique_sequence_word) { "#{unique_sequence_word}a" }
+          let(:unique_sequence_word) { "#{unique_sequence}a" }
           let(:dictionary) { [unique_sequence_word] }
-      pending
+      
 
           it "should return the expected value" do
             list = List.new(dictionary)
@@ -70,7 +68,6 @@ module DictionaryExtraction
       end
 
       context "with two unique sequences" do
-        pending
         context "with words same lenght as sequences" do
           let(:unique_sequence_word1) { 'AAAS' }
           let(:unique_sequence_word2) { 'abed' }
@@ -87,7 +84,6 @@ module DictionaryExtraction
       end
 
       context "with two unique sequences and one not unique" do
-        pending
         context "with words same lenght as sequences" do
           let(:unique_sequence_word1) { 'AAAS' }
           let(:unique_sequence_word2) { 'abed' }
