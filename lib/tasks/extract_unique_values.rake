@@ -4,8 +4,8 @@ desc "Create two files with sequences and words"
 
 namespace :dictionary_extraction do
   task :extract do
-    File.delete('sequences.txt')
-    File.delete('words.txt')
+    FileUtils.rm_f('sequences.txt')
+    FileUtils.rm_f('words.txt')
 
     contents = File.readlines("dictionary.txt")
     contents.map(&:chomp!) # removing new lines
