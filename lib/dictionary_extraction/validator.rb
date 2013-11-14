@@ -6,14 +6,18 @@ module DictionaryExtraction
       @dictionary = dictionary
     end
 
-    def result
-      letters_only_dictionary
+    def valid_entries(&block)
+      @dictionary.each do |dictionary_entry|
+        if letters_only_entry?(dictionary_entry)
+          yield dictionary_entry
+        end
+      end
     end
 
     private
 
-      def letters_only_dictionary
-        @dictionary.grep /^[a-zA-Z]{#{SEQUENCE_LENGTH_MATCH},}/
+      def letters_only_entry?(entry)
+        entry =~ /^[a-zA-Z]{#{SEQUENCE_LENGTH_MATCH},}/
       end
   end
 

@@ -3,12 +3,11 @@ module DictionaryExtraction
   class Core
 
     def initialize(dictionary)
-      validator = Validator.new(dictionary)
-      @valid_dictionary = validator.result
+      @dictionary = dictionary
     end
 
     def result
-      list = List.new(@valid_dictionary)
+      list = List.new(@dictionary)
       list.unique_sequences
     end
 

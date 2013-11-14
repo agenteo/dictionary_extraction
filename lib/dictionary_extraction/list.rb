@@ -9,11 +9,13 @@ module DictionaryExtraction
 
     def unique_sequences
       result = []
-      dictionary.each do |dictionary_entry|
-        sequence = dictionary_entry[0..SEQUENCE_LENGTH_MATCH - 1]
+
+      validator = Validator.new(dictionary)
+      validator.valid_entries do |valid_dictionary_entry|
+        sequence = valid_dictionary_entry[0..SEQUENCE_LENGTH_MATCH - 1]
         sequence_repetitions = dictionary.grep /^#{sequence}/
         if sequence_repetitions.size == 1
-          result << UniqueSequence.new(sequence, dictionary_entry)
+          result << UniqueSequence.new(sequence, valid_dictionary_entry)
         end
       end
       result
